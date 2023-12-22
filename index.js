@@ -9,7 +9,7 @@ require('dotenv').config();
 const jwtKey='e-com';
 app.use(cors(
     {
-       origin:["https://e-commerce-dashboard-lac.vercel.app"],
+       
        methods:["POST","GET","DELETE","PUT"],
        credentials:true
     }
@@ -19,6 +19,9 @@ app.use(express.json());
 // interview Question Cors issue (how to fix it)
 
 // Register api
+app.get('/',(req,res)=>{
+    res.send("Backend");
+})
 app.post('/register', async (req,res)=>{
    
     
