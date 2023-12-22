@@ -7,7 +7,13 @@ const Product = require("./db/models/productModel.js");
 const Jwt = require('jsonwebtoken');
 require('dotenv').config();
 const jwtKey='e-com';
-app.use(cors());
+app.use(cors(
+    {
+       origin:["https://e-commerce-dashboard-lac.vercel.app"],
+       methods:["POST","GET","DELETE","PUT"],
+       credentials:true
+    }
+));
 app.use(express.json());
 
 // interview Question Cors issue (how to fix it)
