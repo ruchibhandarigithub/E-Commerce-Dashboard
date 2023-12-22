@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
-mongoose.connect(`mongodb+srv://1234:1234@cluster0.me6dazy.mongodb.net/e-commercedb`)
+require('dotenv').config();
+mongoose.connect(process.env.MONGODB_URI)
 .then(()=>{
     console.log("DataBase Connected Succesfully");
 })
